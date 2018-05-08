@@ -1,0 +1,16 @@
+/**
+ * Footer
+ */
+
+.l-footer {
+  z-index: 1;
+
+  width: 100%;
+
+  @include respond-to('initialize') {
+  }
+  @include respond-to('medium') {
+  }
+  @include respond-to('large') {
+  }
+}

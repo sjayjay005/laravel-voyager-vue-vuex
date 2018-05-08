@@ -1,0 +1,30 @@
+/**
+ * Header
+ */
+
+$header-min-height-mob: 80px;
+$header-min-height-tbl: 76px;
+$header-min-height-dsk: 76px;
+
+.l-nav-header {
+  // position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+
+  width: 100%;
+
+  background: black;
+
+  @include respond-to('initialize') {
+    height: $header-min-height-mob;
+  }
+  @include respond-to('medium') {
+    height: $header-min-height-tbl;
+  }
+  @include respond-to('large') {
+    height: $header-min-height-dsk;
+  }
+}

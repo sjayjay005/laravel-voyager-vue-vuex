@@ -1,0 +1,25 @@
+/**
+ * Layout
+ * Styles to give layout
+ */
+
+// Element between the content and the body
+@import 'offcanvas';
+
+// Centering and setting max-width
+@import 'wrapper';
+
+// Section separation
+@import 'section';
+
+// Content element
+@import 'content';
+
+// Navigation Header
+@import 'header';
+
+// Navigation
+@import 'navigation';
+
+// Footer
+@import 'footer';

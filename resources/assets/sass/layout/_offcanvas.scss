@@ -1,0 +1,30 @@
+/**
+ *  Offcanvas
+ */
+
+$offcanvas-padding-top-mob: 0;
+$offcanvas-padding-top-tbl: 0;
+$offcanvas-padding-top-dsk: 0;
+
+.l-offcanvas {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-height: 1800px;
+
+  background-color: white;
+
+  @include respond-to('initialize') {
+    padding-top: $offcanvas-padding-top-mob;
+  }
+  @include respond-to('medium') {
+    padding-top: $offcanvas-padding-top-tbl;
+  }
+  @include respond-to('large') {
+    padding-top: $offcanvas-padding-top-dsk;
+  }
+}

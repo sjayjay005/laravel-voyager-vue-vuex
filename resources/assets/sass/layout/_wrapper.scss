@@ -1,0 +1,58 @@
+/**
+ * Wrapper variables
+ */
+
+$wrapper-min: 744px;
+$wrapper-reg: 1000px;
+$wrapper-max: 1256px;
+$wrapper-pad-dsk: 16px;
+$wrapper-pad-mob: 16px;
+
+/**
+ * Wrapper
+ */
+
+.l-wrapper {
+  position: static;
+
+  overflow: visible;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include respond-to('initialize') {
+    max-width: 100%;
+    padding: 0 $wrapper-pad-mob;
+  }
+  @include respond-to('medium') {
+    max-width: $wrapper-reg;
+    padding: 0 $wrapper-pad-dsk;
+  }
+  @include respond-to('large') {
+    padding: 0 $wrapper-pad-dsk;
+  }
+
+  /**
+   * Modifiers
+   */
+
+  &--min {
+    @include respond-to('medium') {
+      max-width: $wrapper-min;
+    }
+  }
+  &--max {
+    @include respond-to('medium') {
+      max-width: $wrapper-max;
+    }
+  }
+
+  &--edge-mob {
+    padding: 0;
+
+    @include respond-to('medium') {
+      padding: 0 $wrapper-pad-dsk;
+    }
+  }
+
+}

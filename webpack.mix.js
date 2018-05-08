@@ -11,5 +11,36 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js("resources/assets/js/app.js", "public/js")
+  .sass("resources/assets/sass/app.scss", "public/css")
+  .extract(["lodash", "axios", "vue", "jquery"]);
+
+/**
+ * Backend
+ */
+
+// mix.sass('resources/assets/sass/admin.scss', 'public/css');
+
+/**
+ * Development Server
+ */
+
+const domain = "laravel-cms.test";
+
+mix.browserSync({
+  host: domain,
+  proxy: domain,
+  open: 'external'
+});
+
+/**
+ * Production Tasks
+ */
+
+if (mix.inProduction()) {
+  mix.version();
+}
+
+if (process.env.DISABLE_NOTIFICATIONS) {
+  mix.disableNotifications();
+}

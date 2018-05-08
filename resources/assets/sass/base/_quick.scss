@@ -1,0 +1,130 @@
+.c-content {
+}
+
+.c-product-list {
+  padding-top: 100px;
+  padding-bottom: 160px;
+}
+
+.c-product {
+  min-width: 320px;
+  margin-bottom: 32px;
+
+  background-color: red;
+
+  &__image {
+    line-height: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px 16px;
+
+    background-color: white;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+
+      background-color: white;
+
+
+      @include respond-to('initialize') {
+        max-width: 568px;
+        width: 100%;
+      }
+      @include respond-to('medium') {
+        max-width: 568px;
+        max-height: 568px;
+        width: auto;
+      }
+      @include respond-to('large') {
+        max-width: 568px;
+        max-height: 568px;
+        width: auto;
+      }
+
+    }
+  }
+
+  &__details {
+    background-color: #e6e7e9;
+  }
+
+  &__details_container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px 16px 12px;
+  }
+
+  &__details_name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    padding-bottom: 4px;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__details_serial {
+    font-size: 16px;
+    line-height: 1.2;
+
+    padding-bottom: 4px;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__details_price {
+    font-size: 16px;
+    line-height: 1.2;
+
+    padding-bottom: 4px;
+
+    text-align: center;
+  }
+
+  span.discount {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.c-product-home {
+  min-height: 500px;
+  padding-top: 100px;
+
+  background-color: #e6e7e9;
+}
+
+.c-product-home__message {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  @include transition(opacity ease-in-out 0.6s);
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.list-enter-active,
+.list-leave-active {
+  @include transition(all ease-in-out 0.2s);
+}
+
+.list-enter,
+.list-leave-to
+/* .list-leave-active below version 2.1.8 */ {
+  opacity: 0; // transform: translateY(30px);
+}

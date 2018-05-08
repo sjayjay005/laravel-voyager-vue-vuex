@@ -1,0 +1,80 @@
+/**
+ *  Element defaults
+ */
+
+html {
+  // overflow-x: hidden;
+}
+
+html,
+body {
+  // width: 100%;
+  // height: 100%;
+  // background-color: #ffb533;
+}
+
+body {
+  //overflow-x: hidden;
+  font-weight: normal;
+}
+
+input,
+textarea,
+select {
+  // -webkit-appearance: none;
+  // -webkit-border-radius: 0;
+  // border-radius: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pure-form input[type=text][disabled],
+.pure-form input[type=password][disabled],
+.pure-form input[type=email][disabled],
+.pure-form input[type=url][disabled],
+.pure-form input[type=date][disabled],
+.pure-form input[type=month][disabled],
+.pure-form input[type=time][disabled],
+.pure-form input[type=datetime][disabled],
+.pure-form input[type=datetime-local][disabled],
+.pure-form input[type=week][disabled],
+.pure-form input[type=number][disabled],
+.pure-form input[type=search][disabled],
+.pure-form input[type=tel][disabled],
+.pure-form input[type=color][disabled],
+.pure-form select[disabled],
+.pure-form textarea[disabled] {
+  @include opacity(0.4);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  @extend .no-appearance;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+}
+
+/* Here you can add default styles to forms elements, text elements and such */

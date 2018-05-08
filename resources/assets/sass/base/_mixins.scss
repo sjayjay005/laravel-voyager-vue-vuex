@@ -1,0 +1,203 @@
+/**
+ *  Mixins
+ */
+
+$break-small: 35.5em; // >= 568px @ 16px
+$break-medium: 48em; // >= 768px @ 16px
+$break-large: 64em; // >= 1024px @ 16px
+$break-extra-large: 80em; // >= 1280px @ 16px
+
+/**
+ * Media Queries for Sized
+ *
+ * @include respond-to() {}
+ *
+ */
+@mixin respond-to( $condition ) {
+  @if $condition == 'initialize' {
+    @media only screen and (min-width: 1px) {
+      @content;
+    }
+  }
+  @if $condition == 'small' {
+    @media only screen and (min-width: $break-small) {
+      @content;
+    }
+  }
+  @if $condition == 'medium' {
+    @media only screen and (min-width: $break-medium) {
+      @content;
+    }
+  }
+  @if $condition == 'large' {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  }
+  @if $condition == 'extra-large' {
+    @media only screen and (min-width: $break-extra-large) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Media Queries for Features
+ *
+ * @include feature-to() {}
+ *
+ */
+@mixin feature-to( $condition ) {
+  // Does the primary input mechanism allow the user to hover over elements?
+  @if $condition == 'hover' {
+    @media only screen and (hover: hover) {
+      @content;
+    }
+  }
+  // landscape-oriented
+  @if $condition == 'landscape' {
+    @media only screen and (orientation: landscape) {
+      @content;
+    }
+  }
+  // portrait-oriented
+  @if $condition == 'portrait' {
+    @media only screen and (orientation: portrait) {
+      @content;
+    }
+  }
+  // Print preview mode.
+  @if $condition == 'print' {
+    @media print {
+      @content;
+    }
+  }
+}
+
+/**
+ * Other
+ */
+
+// Border radius
+@mixin radius($radius: 5px) {
+  border-radius: $radius;
+}
+
+// Text shadow
+@mixin ts($tsval: 0 1px 0 #ffffff) {
+  text-shadow: $tsval;
+}
+
+// Box shadow
+@mixin bs($bsval: 0 0 0.83em #333333, $due: 0 0 0 transparent) {
+  -webkit-box-shadow: $bsval, $due;
+     -moz-box-shadow: $bsval, $due;
+          box-shadow: $bsval, $due;
+
+       -o-box-shadow: $bsval, $due;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+       opacity: $opacity;
+
+  -moz-opacity: $opacity;
+}
+
+// Transitions
+@mixin transition($transition: all linear 0.2s) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+// Transforms
+@mixin transform($transform: translate3d(0, 0, 0)) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}
+
+//Key frames
+@mixin keyframes($animation) {
+  @-webkit-keyframes #{$animation} {
+    @content
+  };
+  @-moz-keyframes #{$animation} {
+    @content
+  };
+  @-ms-keyframes #{$animation} {
+    @content
+  };
+  @keyframes #{$animation} {
+    @content
+  };
+}
+
+// Animation
+@mixin animation($name) {
+  -webkit-animation: $name;
+     -moz-animation: $name;
+      -ms-animation: $name;
+          animation: $name;
+}
+
+// Delay
+@mixin delay($delay: 0s) {
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+      -ms-animation-delay: $delay;
+       -o-animation-delay: $delay;
+
+  delay: $delay;
+}
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// retina.scss
+// A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+
+// Submitted by Nathan Crank
+// nathancrank.com
+
+@mixin at2x($path, $ext: 'jpg', $w: auto, $h: auto) {
+  $at1x_path: '#{$path}.#{$ext}';
+  $at2x_path: '#{$path}@2x.#{$ext}';
+
+  background-image: url('#{$at1x_path}');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media all and (-webkit-min-device-pixel-ratio : 1.5),
+  all and (-o-min-device-pixel-ratio: 3/2),
+  all and (min--moz-device-pixel-ratio: 1.5),
+  all and (min-device-pixel-ratio: 1.5) {
+    background-image: url('#{$at2x_path}');
+    background-size: $w $h;
+  }
+}
+
+@mixin columns($columns: 2, $gap: 20px) {
+  -webkit-column-count: $columns;
+     -moz-column-count: $columns;
+          column-count: $columns;
+  -webkit-column-gap: $gap;
+     -moz-column-gap: $gap;
+          column-gap: $gap;
+
+  .no-csscolumns & {
+    li {
+      float: left;
+
+      width: (100%/$columns);
+      padding-right: $gap;
+      padding-left: $gap;
+    }
+  }
+}

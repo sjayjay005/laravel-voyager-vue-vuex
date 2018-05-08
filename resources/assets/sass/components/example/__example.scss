@@ -1,0 +1,86 @@
+/**
+ * Example Component
+ */
+
+$variable-one: 80px;
+$variable-two: #ffffff;
+
+.c-example-component {
+  // Self definition
+  $self: &;
+
+  position: relative;
+
+  width: 320px;
+  height: 320px;
+
+  opacity: 0.5;
+  background: red;
+
+  @include transition();
+  // Mobile Styles [screen >= 1px]
+  @include respond-to('initialize') {
+  }
+  // Mobile Styles [screen >= 568px]
+  @include respond-to('small') {
+  }
+  // Tablet Styles [screen >=768px]
+  @include respond-to('medium') {
+  }
+  // Desktop Styles [screen >= 1024px]
+  @include respond-to('large') {
+  }
+  // Large Desktop Styles [screen >= 1280px]
+  @include respond-to('extra-large') {
+  }
+  // If Primary input mechanism allows to hover
+  @include feature-to('hover') {
+    &:hover {
+    }
+  }
+  // If Device is Portrait Oriented
+  @include feature-to('landscape') {
+  }
+  // If Device is Landscape Oriented
+  @include feature-to('landscape') {
+  }
+  // If Print Mode
+  @include feature-to('print') {
+  }
+
+  /**
+   * Modifiers
+   */
+
+  &--is-visible {
+    visibility: visible;
+
+    opacity: 1;
+  }
+
+  &--blue {
+    background: blue;
+  }
+
+  &--transparent {
+    background: transparent;
+  }
+
+  /**
+   * Children
+   */
+
+  #{$self}__child-element {
+    width: 160px;
+    height: 160px;
+
+    background: rebeccapurple;
+  }
+
+  #{$self}__child-related-element {
+    width: 160px;
+    height: 160px;
+
+    background: green;
+  }
+}

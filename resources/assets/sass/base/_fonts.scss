@@ -1,0 +1,48 @@
+/**
+ *  Fonts
+ */
+
+// Fonts Import [Google fonts]
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+
+// Imported Fonts
+$font-family-hind: 'Arimo', sans-serif;
+// $font-family-open-sans: 'Arimo', sans-serif;
+
+// Project Main Font
+$font-titles: $font-family-hind;
+$font-text: $font-family-hind;
+$font-size-base: 16px;
+$line-height-base: 1.2;
+
+// Global Font Styles
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: $font-text;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-titles;
+}
+
+p,
+a,
+ul,
+ol,
+li {
+  font-family: $font-text;
+}
