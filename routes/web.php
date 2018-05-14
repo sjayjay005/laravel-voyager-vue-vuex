@@ -12,10 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $data = App\Post::all();
+  return view('frontend.views.home.index', ['data' => $data]);
 });
 
+Route::get('post/{slug}', function($slug){
+  $data = App\Post::where('slug', '=', $slug)->firstOrFail();
+  return view('frontend.views.post.index', ['data' => $data]);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
