@@ -11,15 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-  $data = App\Post::all();
-  return view('frontend.views.home.index', ['data' => $data]);
-});
+Route::get('/', 'PostsController@get_home_web');
 
-Route::get('post/{slug}', function($slug){
-  $data = App\Post::where('slug', '=', $slug)->firstOrFail();
-  return view('frontend.views.post.index', ['data' => $data]);
-});
+Route::get('/post', 'PostsController@get_home_web');
+
+Route::get('/post/{slug}', 'PostsController@get_post_web');
+
+// Route::get('post/{slug}', function($slug){
+//   $data = App\Post::where('slug', '=', $slug)->firstOrFail();
+//   return view('frontend.views.post.index', ['data' => $data]);
+// });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

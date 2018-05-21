@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div>Header</div>
+
+    <router-link :to="{ name: 'home' }">
+      <div>Header</div>
+    </router-link>
 
     <router-view></router-view>
 

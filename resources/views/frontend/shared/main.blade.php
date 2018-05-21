@@ -21,13 +21,13 @@
   <link rel="dns-prefetch" href="//cdn.polyfill.io">
 
   {{-- Google Font --}}
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" lazyload async defer>
+  {{-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" lazyload async defer> --}}
 
   {{-- Font Awesome --}}
   {{-- <script src="https://use.fontawesome.com/releases/v5.0.1/js/all.js" async defer></script> --}}
 
   {{-- Polyfill --}}
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
+  {{-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script> --}}
 
   {{-- Local Styles --}}
   <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
@@ -42,11 +42,11 @@
   <div id="app"></div>
   {{-- /Vue App --}}
 
+  @yield('more-scripts')
+
   <script src="{{ asset(mix('js/manifest.js')) }}"></script>
   <script src="{{ asset(mix('js/vendor.js')) }}"></script>
   <script src="{{ asset(mix('js/app.js')) }}"></script>
-
-  @yield('more-scripts')
 
 </body>
 </html>

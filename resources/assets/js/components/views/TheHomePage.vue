@@ -1,21 +1,27 @@
 <template>
   <div>
-    <h1>{{ dataLayer }}</h1>
+
+    <ul>
+      <li v-for="post in postsList">
+        <router-link :to="{ name: 'post', params: { post: post.slug } }">Título: {{ post.title }}</router-link>
+      </li>
+    </ul>
+
   </div>
 </template>
 
 <script>
 
 export default {
-
-
   data() {
-    return {
-      dataLayer: window.laravelDataLayer
-    }
+    return {}
   },
 
-  computed: {},
+  computed: {
+    postsList() {
+      return this.$store.state.post_summaries
+    }
+  },
 
   methods: {},
 

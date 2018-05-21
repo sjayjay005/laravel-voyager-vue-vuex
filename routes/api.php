@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/', 'PostsController@get_home_api');
+
+Route::get('/posts', 'PostsController@get_posts_summaries_api');
+
+Route::get('/post/{slug}', 'PostsController@get_post_api');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

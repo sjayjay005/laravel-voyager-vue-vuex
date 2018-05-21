@@ -15,7 +15,6 @@
 
 @section('window-scripts')
   <script>
-    let laravelDataLayer = String("{!! addslashes(json_encode($data)) !!}")
-    window.laravelDataLayer = laravelDataLayer
+    window.laravelDataLayer = String("{!! addslashes(json_encode($data)) !!}");
   </script>
 @endsection

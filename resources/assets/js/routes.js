@@ -3,5 +3,6 @@ import ThePostPage from "./components/views/ThePostPage"
 
 export const routes = [
     { path: "/", component: TheHomePage, name: "home" },
-    { path: "/posts/:post", component: ThePostPage, name: "post" }
+    { path: "/post", component: TheHomePage, name: "random" },
+    { path: "/post/:post", component: ThePostPage, name: "post" }
 ]

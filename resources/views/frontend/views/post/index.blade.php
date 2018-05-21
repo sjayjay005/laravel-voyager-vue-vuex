@@ -2,7 +2,7 @@
 
 @section('meta')
   @include('frontend.shared.meta', [
-  'meta_title'    => $post->title,
+  'meta_title'    => 'Post',
   'meta_desc'     => 'Home Description',
   'meta_og_type'  => 'website',
   'meta_og_image' => '',
@@ -13,9 +13,9 @@
   {{-- Extra Metadata for this view only --}}
 @endsection
 
-@section('content')
+@section('nocntent')
 
-	<div class="container">
+{{-- 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 
@@ -25,15 +25,12 @@
 
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 @endsection
 
 @section('window-scripts')
-{{--
-  <script type="text/javascript">
-    window.vuebnb_server_data = "{!! addslashes(json_encode($data)) !!}"
-    window.csrf_token = "{{ csrf_token() }}"
+  <script>
+    window.laravelDataLayer = String("{!! addslashes(json_encode($data)) !!}");
   </script>
---}}
 @endsection

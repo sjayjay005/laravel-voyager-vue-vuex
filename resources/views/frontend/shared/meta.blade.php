@@ -54,29 +54,21 @@
 <meta name="twitter:description"      content="{{ $description }}" />
 <meta name="twitter:image"            content="{{ $twitterImage }}" />
 
-{{-- Geo Data [Disabled] --}}
-
-{{--
-<meta name="geo.region"               content="MX-DIF" />
-<meta name="geo.placename"            content="Ciudad de M&eacute;xico" />
-<meta name="geo.position"             content="19.429129;-99.179324" />
-<meta name="ICBM"                     content="19.429129, -99.179324" />
---}}
 
 {{-- Favicons --}}
-
-<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/img/favicons/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/img/favicons/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/img/favicons/favicon-16x16.png') }}">
-<link rel="manifest" href="{{ asset('/img/favicons/manifest.json') }}">
-<link rel="mask-icon" href="{{ asset('/img/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
-<link rel="shortcut icon" href="{{ asset('/img/favicons/favicon.ico') }}">
-<meta name="msapplication-config" content="{{ asset('/img/favicons/browserconfig.xml') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/img/favicon/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/img/favicon/favicon-16x16.png') }}">
+<link rel="manifest" href="{{ asset('/img/favicon/site.webmanifest') }}">
+<link rel="mask-icon" href="{{ asset('/img/favicon/safari-pinned-tab.svg" color="#5bbad5') }}">
+<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}">
+<meta name="msapplication-config" content="{{ asset('/img/favicon/browserconfig.xml') }}">
+<meta name="msapplication-TileColor" content="#2d89ef">
 <meta name="theme-color" content="#ffffff">
 
 {{-- Other --}}
 
-<meta name="robots"                   content="index, follow" />
-<meta name="csrf-token"               content="{{ csrf_token() }}" />
+<meta name="robots" content="index, follow" />
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 {{-- / --}}
