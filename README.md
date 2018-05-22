@@ -42,48 +42,41 @@ End with an example of getting some data out of the system or using it for a lit
 
 Add additional notes about how to deploy this on a live system
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Laravel]()
+* [Voyager]()
+* [Composer]()
+* [Vue]()
+* [Vuex]()
+* [Axios]()
 
-## Contributing
 
-Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
+---
 
-## Versioning
+### ADD TODO
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+
+- https://github.com/robinvdvleuten/vuex-persistedstate
+- https://github.com/text-mask/text-mask
+- https://github.com/baianat/vee-validate
+- https://github.com/surmon-china/vue-awesome-swiper
+- https://github.com/shentao/vue-multiselect
+- https://github.com/epicmaxco/epic-spinners
+- https://github.com/sagalbot/vue-select
+- https://github.com/euvl/vue-js-modal
+- https://github.com/charliekassel/vuejs-datepicker
+- https://github.com/JosephSmith127/vue-loop
+- https://github.com/asika32764/vue2-animate
+
+
+---
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **José Lugo** - *Initial work* - [ChepeTime](https://github.com/ChepeTime)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc

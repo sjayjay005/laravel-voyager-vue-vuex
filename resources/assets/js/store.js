@@ -5,6 +5,8 @@ Vue.use(Vuex)
 
 import router from './router'
 import axios from 'axios'
+import createPersistedState from 'vuex-persistedstate';
+import * as Cookies from 'js-cookie';
 
 axios.defaults.headers.common = {
   'X-Requested-With': 'XMLHttpRequest',
@@ -21,13 +23,11 @@ export default new Vuex.Store({
   mutations: {
 
     addData(state, { route, data }) {
-
       if (route === 'home') {
         state.post_summaries = data.posts;
       } else if (route === 'post') {
         state.posts.push(data.post);
       }
-
     }
 
   },
@@ -38,5 +38,7 @@ export default new Vuex.Store({
     }
   },
 
-  actions: {}
+  actions: {},
+
+  plugins: [createPersistedState()]
 })

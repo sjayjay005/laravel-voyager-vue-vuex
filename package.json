@@ -24,8 +24,10 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "js-cookie": "^2.2.0",
         "vue-meta": "^1.5.0",
         "vue-router": "^3.0.1",
-        "vuex": "^3.0.1"
+        "vuex": "^3.0.1",
+        "vuex-persistedstate": "^2.5.4"
     }
 }
