@@ -15,12 +15,17 @@ axios.defaults.headers.common = {
 
 export default new Vuex.Store({
   state: {
+    page: 'home',
     post_summaries: [],
     posts: [],
     auth: false
   },
 
   mutations: {
+
+    updatePage(state, pageName) {
+      state.page = pageName
+    },
 
     addData(state, { route, data }) {
       if (route === 'home') {
@@ -40,5 +45,5 @@ export default new Vuex.Store({
 
   actions: {},
 
-  plugins: [createPersistedState()]
+  // plugins: [createPersistedState()]
 })
