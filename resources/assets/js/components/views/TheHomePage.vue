@@ -5,58 +5,55 @@
       <div class="l-wrapper">
 
 
-          <div class="c-container c-container--card">
+        <div class="c-container c-container--card">
 
-
-            <div class="c-post-card" v-for="post in postsList" @mouseover="loadPost(post.slug)">
-              <router-link :to="{ name: 'post', params: { post: post.slug } }">
-                <div class="c-post-card__head">
-                  <img :src="post.thumb">
-                </div>
-                <div class="c-post-card__body">
-                  <p>{{ post.title }}</p>
-                </div>
-              </router-link>
-            </div>
-
+          <div class="c-post-card" v-for="post in postsList" @mouseover="loadPost(post.slug)">
+            <router-link :to="{ name: 'post', params: { post: post.slug } }">
+              <div class="c-post-card__head">
+                <img :src="post.thumb">
+              </div>
+              <div class="c-post-card__body">
+                <p>{{ post.title }}</p>
+              </div>
+            </router-link>
           </div>
 
+        </div>
 
       </div>
     </div>
-
 
   </page>
 </template>
 
 <script>
-import Page from './../shared/Page'
-import {getPost} from './../../services'
+  import Page from './../shared/Page';
+  import {getPost} from './../../services';
 
-export default {
-  name: 'TheHomePage',
+  export default {
+    name: 'TheHomePage',
 
-  metaInfo: {
-    title: 'My Awesome Webapp',
-    titleTemplate: null
-  },
+    metaInfo: {
+      title: 'My Awesome Webapp',
+      titleTemplate: null
+    },
 
-  data() {
-    return {}
-  },
+    data() {
+      return {}
+    },
 
-  computed: {
-    postsList() {
-      return this.$store.state.post_summaries
-    }
-  },
+    computed: {
+      postsList() {
+        return this.$store.state.post_summaries
+      }
+    },
 
-  methods: {
-    loadPost: function(slug){
-      getPost(slug)
-    }
-  },
+    methods: {
+      loadPost: function(slug){
+        getPost(slug)
+      }
+    },
 
-  components: { Page }
-};
+    components: { Page }
+  };
 </script>

@@ -1,8 +1,13 @@
 import axios from 'axios';
-
 import store from './store';
 
+const enabledPreload = true;
+
+/**
+* get Single Post Data and add it to Vuex
+*/
 let getPost = function (slug) {
+  if (!enabledPreload) return;
 
   if (store.getters.getPost(slug)) return;
 
@@ -11,10 +16,14 @@ let getPost = function (slug) {
   });
 };
 
-export {getPost}
+export { getPost };
 
-
+/**
+* get Home Data and add it to Vuex
+* @return {[type]} [description]
+*/
 let getHome = function () {
+  if (!enabledPreload) return;
 
   if (store.state.post_summaries.length > 0) return;
 
@@ -23,4 +32,4 @@ let getHome = function () {
   });
 };
 
-export {getHome}
+export { getHome };
