@@ -7,11 +7,14 @@
 // require('./bootstrap');
 
 import Vue from 'vue';;
+import Meta from 'vue-meta'
+
 import router from './router';
 import store from './store';
 
 import App from './components/App.vue';
 
+Vue.use(Meta)
 Vue.use(router);
 
 var app = new Vue({

@@ -1,32 +1,40 @@
 <template>
   <div>
-
-    <router-link :to="{ name: 'home' }">
-      <div>Header</div>
-    </router-link>
+    <the-navigation />
 
     <router-view></router-view>
 
-    <div>Footer</div>
+    <the-footer />
   </div>
 </template>
 
- <script>
+<script>
 
+  import TheNavigation from './shared/navigation/TheNavigation.vue'
+  import TheFooter from './shared/navigation/TheFooter.vue'
 
-export default {
-  data() {
-    return {
-      csrf_token: window.csrf_token
+  export default {
+    name: 'App',
+
+    metaInfo: {
+      title: 'Default Title',
+      titleTemplate: '%s | My Awesome Webapp'
+    },
+
+    data() {
+      return {
+        csrf_token: window.csrf_token
+      }
+    },
+
+    methods: {
+      logout() {}
+    },
+
+    components: {
+      TheNavigation,
+      TheFooter
     }
-  },
-  methods: {
-    logout() {
-      document.getElementById('logout').submit();
-    }
-  },
-
-  components: {}
-}
+  }
 </script>
 

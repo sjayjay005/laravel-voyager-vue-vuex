@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Voyager;
 // use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
@@ -11,6 +12,7 @@ class PostsController extends Controller
 
   private function get_post($slug) {
     $collection = Post::where('slug', '=', $slug)->firstOrFail();
+    $collection['image'] = Voyager::image($collection->image);
 
     return collect(['post' => $collection->toArray()]);
   }
