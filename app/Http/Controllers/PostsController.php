@@ -27,6 +27,7 @@ class PostsController extends Controller
       // 'excerpt',
       // 'image',
       'slug',
+      'image'
       // 'meta_description',
       // 'meta_keywords',
       // 'status',
@@ -34,6 +35,11 @@ class PostsController extends Controller
       // 'created_at',
       // 'updated_at'
     ]);
+
+    $collection->transform(function($post) {
+      $post->thumb = Voyager::image($post->image);
+      return $post;
+    });
 
     return collect(['posts' => $collection->toArray()]);
   }

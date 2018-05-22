@@ -4,11 +4,23 @@
     <div class="c-section">
       <div class="l-wrapper">
 
-        <ul>
-          <li v-for="post in postsList">
-            <router-link :to="{ name: 'post', params: { post: post.slug } }">Título: {{ post.title }}</router-link>
-          </li>
-        </ul>
+
+          <div class="c-container c-container--card">
+
+
+            <div class="c-post-card" v-for="post in postsList" @mouseover="loadPost(post.slug)">
+              <router-link :to="{ name: 'post', params: { post: post.slug } }">
+                <div class="c-post-card__head">
+                  <img :src="post.thumb">
+                </div>
+                <div class="c-post-card__body">
+                  <p>{{ post.title }}</p>
+                </div>
+              </router-link>
+            </div>
+
+          </div>
+
 
       </div>
     </div>
@@ -19,6 +31,7 @@
 
 <script>
 import Page from './../shared/Page'
+import {getPost} from './../../services'
 
 export default {
   name: 'TheHomePage',
@@ -38,7 +51,11 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    loadPost: function(slug){
+      getPost(slug)
+    }
+  },
 
   components: { Page }
 };

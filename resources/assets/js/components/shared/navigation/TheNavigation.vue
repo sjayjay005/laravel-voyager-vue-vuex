@@ -2,7 +2,7 @@
   <div class="c-navigation">
 
     <router-link :to="{ name: 'home' }">
-      <div class="c-navigation__logo"></div>
+      <div class="c-navigation__logo" @mouseover="loadHome"></div>
     </router-link>
 
 
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+
+import {getHome} from './../../../services.js'
 
 export default {
   name: 'TheNavigation',
@@ -27,11 +29,15 @@ export default {
     return {
       styles: {
         height: 440
-      }
+      },
     }
   },
 
-  methods: {}
+  methods: {
+    loadHome: () => {
+      getHome()
+    }
+  },
 
 }
 </script>
