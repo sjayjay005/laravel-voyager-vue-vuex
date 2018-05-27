@@ -160,6 +160,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Thirdparty
+         */
+        Fadion\Maneuver\ManeuverServiceProvider::class
+
     ],
 
     /*
