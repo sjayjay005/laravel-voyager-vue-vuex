@@ -42,6 +42,25 @@ End with an example of getting some data out of the system or using it for a lit
 
 Add additional notes about how to deploy this on a live system
 
+
+```sh
+# Autoloader Optimization
+composer install --optimize-autoloader --no-dev
+
+# Optimizing Configuration Loading
+php artisan config:cache
+
+# Use project node version
+nvm use
+
+# Install node dependencies
+yarn
+
+# Build project for production
+yarn build
+
+```
+
 ## Built With
 
 * [Laravel]()
