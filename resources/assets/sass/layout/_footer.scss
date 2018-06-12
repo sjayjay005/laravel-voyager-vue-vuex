@@ -5,12 +5,29 @@
 .l-footer {
   z-index: 1;
 
-  width: 100%;
+  display: flex;
 
-  @include respond-to('initialize') {
-  }
-  @include respond-to('medium') {
-  }
-  @include respond-to('large') {
-  }
+  width: 100%;
+  padding: 32px;
+
+  color: #eeeeee;
+  background-color: #333333;
+
+  @include respond-to('initialize') {}
+  @include respond-to('medium') {}
+  @include respond-to('large') {}
+}
+
+.l-footer--grid {
+  display: grid;
+
+  grid-gap: 1px 1px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.l-footer--row {
+  display: block;
+
+  width: 100%;
 }

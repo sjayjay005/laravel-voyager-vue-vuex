@@ -1,0 +1,221 @@
+/**
+ * Main Navigation
+ */
+
+.c-nav {
+  position: fixed;
+  z-index: 11;
+  top: -96px;
+  right: 0;
+  left: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  opacity: 0;
+
+  @include transition(all ease-in-out 0.7s);
+
+  &.is-visible {
+    top: 0;
+
+    opacity: 1;
+  }
+}
+
+.c-nav--offset {
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  .c-nav-wrapper {
+    max-width: 1300px;
+  }
+}
+
+
+
+/**
+ * Nav Wrapper
+ */
+
+.c-nav-wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: none;
+  height: 64px;
+
+  background-color: #dddddd;
+
+  @include respond-to('initialize') {
+    padding: 0 16px;
+  }
+  @include respond-to('medium') {
+    padding: 0 16px;
+  }
+  @include respond-to('large') {
+    padding: 0 16px;
+  }
+}
+
+
+/**
+ * Nav Logo
+ */
+
+.c-nav__logo {
+  @include feature-to('hover') {
+    img {
+      @include transition();
+    }
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+  a {
+    font-family: $font-titles;
+    font-size: 1.3em;
+    font-weight: 800; // padding: 16px;
+    // color: lighten(#000000, 25%);
+    color: #000000;
+
+    @include transition();
+    @include feature-to('hover') {
+      &:hover {
+        color: lighten(#000000, 0%);
+      }
+    }
+  }
+
+  .c-nav__logo__svg {
+    line-height: 0;
+
+    display: block;
+
+    width: 48px;
+
+    a {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      min-width: 100%;
+
+      opacity: 0.85;
+    }
+  }
+}
+
+
+/**
+ * Nav Menu
+ */
+
+.c-nav__navigation {
+  display: flex;
+
+  justify-content: space-between;
+
+  @include respond-to('initialize') {
+    display: none;
+  }
+  @include respond-to('medium') {
+    display: flex;
+  }
+  @include respond-to('large') {
+    display: flex;
+  }
+}
+
+.c-nav__navigation__el {
+  position: relative;
+}
+
+.c-nav__navigation__el a {
+  font-family: $font-titles;
+  font-size: 12px;
+  font-weight: 800;
+
+  position: relative;
+
+  display: block;
+
+  padding: 24px 16px;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: lighten(#000000, 25%);
+
+  @include transition();
+  @include feature-to('hover') {
+    &:hover {
+      color: lighten(#000000, 0%);
+
+      span:before {
+        width: 30px;
+
+        opacity: 1;
+      }
+    }
+  }
+
+  &.router-link-active {
+    span:before {
+      opacity: 1;
+    }
+  }
+
+  span:before {
+    position: absolute;
+    z-index: 10;
+    bottom: 12px;
+    left: 50%;
+
+    display: block;
+
+    width: 0;
+    height: 3px;
+
+    content: '';
+
+    opacity: 1;
+    background-color: #bb403f;
+
+    @include transform(translate(-50%, -50%));
+    @include transition(all ease-in-out 0.3s);
+  }
+}
+
+
+/**
+ * Nav Hamburger
+ */
+
+.c-nav__hamburger {
+  overflow: hidden;
+
+  padding: 22px 24px 28px;
+
+  cursor: pointer;
+
+  @include respond-to('initialize') {
+    display: block;
+  }
+  @include respond-to('medium') {
+    display: none;
+
+    max-width: 0;
+    max-height: 0;
+  }
+  @include respond-to('large') {
+    display: none;
+  }
+}

@@ -1,0 +1,79 @@
+.c-nav-sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: -120%;
+  bottom: 0;
+  left: 120%;
+
+  opacity: 0;
+  background-color: #E44442;
+
+  @include transition((opacity ease-in-out 0.22s, left ease 0s 0.3s, right ease 0s 0.3s));
+
+  &.is-visible {
+    right: 0;
+    left: 0;
+
+    opacity: 1;
+
+    @include transition((opacity ease-in-out 0.33s 0.1s, left ease 0s 0s, right ease 0s 0s));
+  }
+}
+
+.c-nav-sidebar__container {
+  padding: 120px 32px 0;
+}
+
+.c-nav-sidebar__navigation {
+}
+
+.c-nav-sidebar__navigation__el {
+  opacity: 0;
+
+  @include transition(all ease 0.25s 0s);
+}
+
+.c-nav-sidebar.is-visible .c-nav-sidebar__navigation__el {
+  opacity: 1 !important;
+
+  &:nth-child(1) { @include transition(all ease 0.50s .3s);}
+  &:nth-child(2) { @include transition(all ease 0.50s .5s);}
+  &:nth-child(3) { @include transition(all ease 0.50s .7s);}
+  &:nth-child(4) { @include transition(all ease 0.50s .9s);}
+  &:nth-child(5) { @include transition(all ease 0.50s 1.1s);}
+  &:nth-child(6) { @include transition(all ease 0.50s 1.3s);}
+
+}
+
+.c-nav-sidebar__navigation__el a {
+  font-family: $font-titles;;
+  font-size: 26px;
+  font-weight: 800;
+
+  position: relative;
+
+  display: block;
+
+  padding: 32px 0;
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: lighten(#000000, 0%);
+  // border-bottom: solid 1px #000;
+
+  @include transition();
+  @include feature-to('hover') {
+    &:hover {
+      color: lighten(#000000, 0%);
+    }
+  }
+}
+
+.c-nav-sidebar__navigation__el {
+  &:nth-last-child(1) a {
+    border-bottom-color: transparent;
+  }
+}

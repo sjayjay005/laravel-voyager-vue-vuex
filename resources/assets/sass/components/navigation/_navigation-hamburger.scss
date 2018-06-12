@@ -1,0 +1,102 @@
+/**
+ * Hamburger Icon
+ */
+
+$ham-line-height: 2px;
+$ham-line-separation: 4px;
+$ham-width: 20px;
+$ham-height: ($ham-line-height * 3)+($ham-line-separation * 2);
+$ham-border: 100px;
+$ham-color: #000000;
+
+// Main element
+.c-hamburger {
+  position: relative;
+
+  display: block;
+
+  width: $ham-width;
+  height: $ham-height;
+  margin: 0 auto;
+
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+// All lines
+.c-hamburger__line {
+  position: absolute;
+
+  display: block;
+
+  width: $ham-width;
+  height: $ham-line-height;
+
+  transform-origin: center center;
+
+  border-radius: $ham-border;
+  background-color: $ham-color;
+}
+
+.c-hamburger__line--1,
+.c-hamburger__line--3 {
+  @include transition((top ease 0.3s 0.4s, left ease 0.3s, width ease 0.3s 0s, transform ease 0.3s 0.0s));
+}
+
+// Individual lines
+.c-hamburger__line--1 {
+  top: 0;
+  left: 0;
+
+  width: $ham-width * 1;
+}
+
+.c-hamburger__line--2 {
+  top: $ham-line-height + $ham-line-separation;
+
+  width: $ham-width * 0.75;
+
+  @include transition((opacity ease 0.3s 0.4s));
+}
+
+.c-hamburger__line--3 {
+  top: ($ham-line-height + $ham-line-separation) * 2;
+  left: 0;
+
+  width: $ham-width * 0.50;
+}
+
+// Open modifier
+.c-hamburger.is-active {
+  .c-hamburger__line--1,
+  .c-hamburger__line--3 {
+    @include transition((top ease 0.3s 0s, left ease 0.3s 0.3s, width ease 0.3s 0.3s, transform ease 0.3s 0.3s));
+  }
+
+  .c-hamburger__line--1 {
+    top: 6px;
+    left: 3px;
+
+    width: $ham-width * 0.75;
+
+    @include transform(rotate(-45deg));
+  }
+  .c-hamburger__line--2 {
+    left: 3px;
+
+    width: $ham-width * 0.75;
+
+    opacity: 0;
+
+    @include transition((opacity ease 0.1s 0.1s, width ease 0.35s 0.3s));
+  }
+  .c-hamburger__line--3 {
+    top: 6px;
+    left: 3px;
+
+    width: $ham-width * 0.75;
+
+    @include transform(rotate(45deg));
+  }
+}

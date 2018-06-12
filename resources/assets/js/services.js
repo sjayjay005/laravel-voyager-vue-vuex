@@ -1,12 +1,16 @@
 import axios from 'axios';
 import store from './store';
 
+/**
+ * Services.js
+ */
+
 const enabledPreload = true;
 
 /**
-* get Single Post Data and add it to Vuex
+* GET Single Post Data and add it to Vuex
 */
-let getPost = function (slug) {
+const getPost = slug => {
   if (!enabledPreload) return;
 
   if (store.getters.getPost(slug)) return;
@@ -19,10 +23,10 @@ let getPost = function (slug) {
 export { getPost };
 
 /**
-* get Home Data and add it to Vuex
+* GET Home Data and add it to Vuex
 * @return {[type]} [description]
 */
-let getHome = function () {
+const getHome = () => {
   if (!enabledPreload) return;
 
   if (store.state.post_summaries.length > 0) return;
@@ -33,3 +37,29 @@ let getHome = function () {
 };
 
 export { getHome };
+
+/**
+* POST Contact Form
+*/
+const postContact = data => {
+  if (!data) return -1;
+
+  const endpoint = `/api/contact`;
+
+  return axios.post(endpoint, data)
+    .then(response => response)
+    .catch(throwError);
+};
+
+export { postContact };
+
+/**
+ * [Handler] Service Error Handler
+ */
+function throwError(error) {
+  console.log(error);
+  throw error;
+}
+
+//
+
